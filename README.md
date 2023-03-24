@@ -15,22 +15,32 @@ Here are several optimization methods for unimodal functions satisfying the Lips
   Variants of dichotomy methods have the primary right to choose points of view. Consider the dichotomy options: the half-division method and the chord method.
 
 2. # Newton method
-  This is an iterative numerical method for finding the root (zero) of a given function. The method was first proposed by the English physicist, mathematician and astronomer Isaac Newton (1643-1727), under whose name it gained its fame. The search for a solution is carried out by constructing successive approximations and is based on the principles of simple iteration. The method has quadratic convergence. In the case of solving optimization problems, it is assumed that the function $f(x)$ is twice continuously differentiable. Finding the minimum of the function $f(x)$ is done by finding a stationary point, i.e. point x^* satisfying the equation $f'(x)=0$, which is solved by Newton's method.
+    This is an iterative numerical method for finding the root (zero) of a given function. The method was first proposed by the English physicist, mathematician and astronomer Isaac Newton (1643-1727), under whose name it gained its fame. The search for a solution is carried out by constructing successive approximations and is based on the principles of simple iteration. The method has quadratic convergence. In the case of solving optimization problems, it is assumed that the function $f(x)$ is twice continuously differentiable. Finding the minimum of the function $f(x)$ is done by finding a stationary point, i.e. point x^* satisfying the equation $f'(x)=0$, which is solved by Newton's method.
 
 
-If x^k is the point obtained at the kth step, then the function $f'(x)$ is approximated by its tangent equation:
+  If x^k is the point obtained at the kth step, then the function $f'(x)$ is approximated by its tangent equation:
 
-$y = f'(x^k) + (x - x^k)f''(x^k)$
+  $y = f'(x^k) + (x - x^k)f''(x^k)$
 
-,
-and the point $x^{k+1}$ is chosen as the intersection of this line with the axis Ox, i.e.
+  ,
+  and the point $x^{k+1}$ is chosen as the intersection of this line with the axis Ox, i.e.
 
-$x^{k+1} = x^k - f'(x^k)/f''(x^k)$.
+  $x^{k+1} = x^k - f'(x^k)/f''(x^k)$.
 
-The inconvenience of this method is the need to calculate the first and second derivatives at each point. This means that it is applicable only when the function $f(x)$ has a sufficiently simple analytical form so that the derivatives can be calculated explicitly by hand. Indeed, whenever a new problem is solved, it is necessary to choose two specific subroutines (functions) for calculating the derivatives $f'(x)$ and $f''(x)$, which does not allow one to construct general algorithms, i.e. applicable to any type of function.
+  The inconvenience of this method is the need to calculate the first and second derivatives at each point. This means that it is applicable only when the function $f(x)$ has a sufficiently simple analytical form so that the derivatives can be calculated explicitly by hand. Indeed, whenever a new problem is solved, it is necessary to choose two specific subroutines (functions) for calculating the derivatives $f'(x)$ and $f''(x)$, which does not allow one to construct general algorithms, i.e. applicable to any type of function.
 
-When the starting point of iterations $x_0$ is sufficiently close to the desired minimum, the rate of convergence of Newton's method is generally quadratic. However, the global convergence of Newton's method, generally speaking, is not guaranteed.
+  When the starting point of iterations $x_0$ is sufficiently close to the desired minimum, the rate of convergence of Newton's method is generally quadratic. However, the global convergence of Newton's method, generally speaking, is not guaranteed.
 
-A good way to ensure global convergence of this method is to combine it with another method to quickly get a good approximation of the desired optimum. Then several iterations of Newton's method, with this point as the starting point, are sufficient to obtain excellent accuracy.
+  A good way to ensure global convergence of this method is to combine it with another method to quickly get a good approximation of the desired optimum. Then several iterations of Newton's method, with this point as the starting point, are sufficient to obtain excellent accuracy.
 
-3. # Secant method
+  3. # Secant method
+    The secant method is obtained from the tangent method by replacing $f'(x^k)$ with a difference approximation:
+
+  $f'(x^k) \approx \frac{f(x^k)-f(x^{k-1})}{x^k-x^{k-1}}.$
+  As a result, we obtain the formula for the iterative process:
+
+  (2)
+  $x^{k+1}=x^k-\frac{x^k-x^{k-1}}{f(x^k)-f(x^{k-1})}f(x^k) , \;k=1,2,\ldots$
+  The secant method is two-step, that is, the new approximation x^{k+1} is determined by the two previous iterations $x^k$ and $x^{k-1}$. In method (1) it is necessary to set two initial approximations $x^0$ and $x^1$.
+
+  The convergence rate of the method will be linear: $|x^{k+1}-x*|=O(k^k-x*)$.
