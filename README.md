@@ -34,7 +34,8 @@ Here are several optimization methods for unimodal functions satisfying the Lips
   A good way to ensure global convergence of this method is to combine it with another method to quickly get a good approximation of the desired optimum. Then several iterations of Newton's method, with this point as the starting point, are sufficient to obtain excellent accuracy.
 
   3. # Secant method
-    The secant method is obtained from the tangent method by replacing $f'(x^k)$ with a difference approximation:
+  
+  The secant method is obtained from the tangent method by replacing $f'(x^k)$ with a difference approximation:
 
   $f'(x^k) \approx \frac{f(x^k)-f(x^{k-1})}{x^k-x^{k-1}}.$
   As a result, we obtain the formula for the iterative process:
