@@ -43,4 +43,4 @@ Here are several optimization methods for unimodal functions satisfying the Lips
   $x^{k+1}=x^k-\frac{x^k-x^{k-1}}{f(x^k)-f(x^{k-1})}f(x^k)  , \;k=1,2,\ldots$
   The secant method is two-step, that is, the new approximation $x^{k+1}$ is determined by the two previous iterations $x^k$ and $x^{k-1}$. In method (1) it is        necessary to set two initial approximations $x^0$ and $x^1$.
 
-  The convergence rate of the method will be linear: $|x^{k+1}-x*|=O(k^k-x*)$.
+  The convergence rate of the method will be linear: $|x^{k+1}-x^*|=O(k^k-x^*)$.
