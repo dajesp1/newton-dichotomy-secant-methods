@@ -4,7 +4,7 @@ Here are several optimization methods for unimodal functions satisfying the Lips
 1. # Dichotomy
   A rather obvious dependence is observed: “If a continuous function at the limit values has the value of different indicators, then inside this interval it has a root (at least one, but maybe several)”. On this basis, a numerical finding of the approaching value of the root function is constructed. In general, this method is called dichotomy, i.e. dividing the segment into two parts. The general algorithm looks like this:
 
-  Set start interval $[X_left}..X_right}]$;
+  Set start interval $[X_left..X_right]$;
   Make sure that the function has a different sign at the ends;
   Repeat
   select point X inside the interval;
