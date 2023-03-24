@@ -20,12 +20,12 @@ Here are several optimization methods for unimodal functions satisfying the Lips
 
 If x^k is the point obtained at the kth step, then the function f'(x) is approximated by its tangent equation:
 
-y = f'($x^k$) + (x - $x^k$)f''($x^k$)
+$y = f'(x^k) + (x - x^k)f''(x^k)$
 
 ,
 and the point x^{k+1} is chosen as the intersection of this line with the axis Ox, i.e.
 
-$x^{k+1} = x^k - f'(x^k)/f''($x^k$)$.
+$x^{k+1} = x^k - f'(x^k)/f''(x^k)$.
 
 The inconvenience of this method is the need to calculate the first and second derivatives at each point. This means that it is applicable only when the function f(x) has a sufficiently simple analytical form so that the derivatives can be calculated explicitly by hand. Indeed, whenever a new problem is solved, it is necessary to choose two specific subroutines (functions) for calculating the derivatives f'(x) and f''(x), which does not allow one to construct general algorithms, i.e. applicable to any type of function.
 
